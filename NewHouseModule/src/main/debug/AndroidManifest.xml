@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.baronzhang.android.newhouse">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/new_house_ic_launcher"
+        android:label="@string/new_house_app_name"
+        android:supportsRtl="true"
+        android:theme="@style/NewHouseAppTheme">
+        <activity
+            android:name="com.baronzhang.android.newhouse.NewHouseMainActivity"
+            android:label="@string/new_house_label_home_page">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

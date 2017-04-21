@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Modularization</string>
+    <string name="string_goto_new_house_module">跳转到新房模块</string>
+    <string name="string_goto_second_house_module">跳转到二手房模块</string>
+    <string name="string_goto_im_module">跳转到IM模块</string>
+    <string name="label_home_page">首页</string>
+</resources>

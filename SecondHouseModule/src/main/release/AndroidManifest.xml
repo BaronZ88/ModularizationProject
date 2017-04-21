@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.baronzhang.android.secondhouse">
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity
+            android:name="com.baronzhang.android.secondhouse.SecondHouseMainActivity"
+            android:label="@string/second_house_label_home_page">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+                <data
+                    android:host="com.baronzhang.android.secondhouse"
+                    android:scheme="router" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

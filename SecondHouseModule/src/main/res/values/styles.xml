@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="SecondHouseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/second_house_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/second_house_colorPrimaryDark</item>
+        <item name="colorAccent">@color/second_house_colorAccent</item>
+    </style>
+
+</resources>
