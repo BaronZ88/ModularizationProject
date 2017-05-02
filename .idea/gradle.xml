@@ -14,9 +14,6 @@
             <option value="$PROJECT_DIR$/InstantMessagingModule" />
             <option value="$PROJECT_DIR$/NewHouseModule" />
             <option value="$PROJECT_DIR$/OpenSourceLibrary" />
-            <option value="$PROJECT_DIR$/Router" />
-            <option value="$PROJECT_DIR$/RouterAnnotations" />
-            <option value="$PROJECT_DIR$/RouterCompiler" />
             <option value="$PROJECT_DIR$/SecondHouseModule" />
           </set>
         </option>

@@ -1,8 +1,7 @@
-include ':App', ':RouterAnnotations', ':RouterCompiler',
+include ':App',
         ':SecondHouseModule',
         ':InstantMessagingModule',
         ':NewHouseModule',
         ':OpenSourceLibrary',
         ':CoreModel',
-        ':Router',
         ':CommonBusiness'

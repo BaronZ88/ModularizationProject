@@ -9,9 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/ModularizationProject.iml" filepath="$PROJECT_DIR$/ModularizationProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/NewHouseModule/NewHouseModule.iml" filepath="$PROJECT_DIR$/NewHouseModule/NewHouseModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/OpenSourceLibrary/OpenSourceLibrary.iml" filepath="$PROJECT_DIR$/OpenSourceLibrary/OpenSourceLibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Router/Router.iml" filepath="$PROJECT_DIR$/Router/Router.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RouterAnnotations/RouterAnnotations.iml" filepath="$PROJECT_DIR$/RouterAnnotations/RouterAnnotations.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RouterCompiler/RouterCompiler.iml" filepath="$PROJECT_DIR$/RouterCompiler/RouterCompiler.iml" />
       <module fileurl="file://$PROJECT_DIR$/SecondHouseModule/SecondHouseModule.iml" filepath="$PROJECT_DIR$/SecondHouseModule/SecondHouseModule.iml" />
     </modules>
   </component>

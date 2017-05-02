@@ -1,12 +1,11 @@
 package com.baronzhang.android.modularization;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-import com.baronzhang.android.commonbusiness.HouseDetail;
-import com.baronzhang.android.commonbusiness.RouterService;
+import com.baronzhang.android.commonbusiness.base.activity.BaseActivity;
+import com.baronzhang.android.commonbusiness.model.HouseDetail;
+import com.baronzhang.android.commonbusiness.router.RouterService;
 import com.baronzhang.android.router.Router;
-import com.baronzhang.android.router.annotations.inject.InjectIntentExtrasParam;
 
 import java.util.ArrayList;
 
@@ -14,14 +13,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private RouterService routerService;
 
     private Unbinder unbinder;
-
-    @InjectIntentExtrasParam
-    String cityId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +29,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btn_goto_new_house)
-    public void startNewHouseActivity() {
-        routerService.startNewHouseActivity("110", new HouseDetail());
+    void startNewHouseActivity() {
+        routerService.startNewHouseActivity("110", new HouseDetail("10000", "潍坊新村", 66));
     }
 
     @OnClick(R.id.btn_goto_second_house)
-    public void startSecondHouseActivity() {
-        routerService.startSecondHouseActivity("111", 181818);
+    void startSecondHouseActivity() {
+
+        ArrayList<HouseDetail> houseDetailList = new ArrayList<>();
+        houseDetailList.add(new HouseDetail("10001", "潍坊一村", 88));
+        houseDetailList.add(new HouseDetail("10002", "潍坊二村", 120));
+        houseDetailList.add(new HouseDetail("10003", "潍坊二村", 99));
+        houseDetailList.add(new HouseDetail("10004", "潍坊三村", 86));
+        houseDetailList.add(new HouseDetail("10005", "潍坊五村", 80));
+
+        routerService.startSecondHouseActivity("111", houseDetailList);
     }
 
     @OnClick(R.id.btn_goto_im)
-    public void startIMActivity() {
-        ArrayList<Integer> array = new ArrayList<>();
-        array.add(123);
-        array.add(123234);
-        routerService.startIMActivity("112", array);
+    void startIMActivity() {
+        ArrayList<Integer> brokerIdList = new ArrayList<>();
+        brokerIdList.add(20000);
+        brokerIdList.add(20001);
+        brokerIdList.add(20002);
+        routerService.startIMActivity("112", brokerIdList);
     }
 
     @Override
