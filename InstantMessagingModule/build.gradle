@@ -41,11 +41,10 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
+    testCompile rootProject.ext.dependencies["junit"]
     compile project(':CoreModel')
     compile project(':CommonBusiness')
 
-    compile 'com.baronzhang.android:router-api:0.2.0'
-    annotationProcessor 'com.baronzhang.android:router-compiler:0.2.0'
+    compile rootProject.ext.dependencies["router"]
+    annotationProcessor rootProject.ext.dependencies["router-compiler"]
 }

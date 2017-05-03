@@ -26,17 +26,24 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
-    compile 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile 'com.facebook.stetho:stetho:1.4.2'
-    compile 'com.facebook.stetho:stetho-okhttp3:1.4.2'
-    compile 'com.squareup.okhttp3:okhttp:3.5.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
-    compile 'com.alibaba:fastjson:1.2.23'
-    compile 'com.j256.ormlite:ormlite-android:5.0'
+    testCompile rootProject.ext.dependencies["junit"]
+
+    compile rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+
+    compile rootProject.ext.dependencies["rxandroid"]
+
+    compile rootProject.ext.dependencies["retrofit"]
+    compile rootProject.ext.dependencies["adapter-rxjava"]
+
+    compile rootProject.ext.dependencies["stetho"]
+    compile rootProject.ext.dependencies["stetho-okhttp3"]
+
+    compile rootProject.ext.dependencies["okhttp3"]
+    compile rootProject.ext.dependencies["okhttp3-logging-interceptor"]
+
+    compile rootProject.ext.dependencies["fastjson"]
+    compile rootProject.ext.dependencies["ormlite-android"]
+
+    compile rootProject.ext.dependencies["retrofit2-fastjson-converter"]
 }
