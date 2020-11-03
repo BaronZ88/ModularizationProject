@@ -1,54 +1,33 @@
-def supportVersion = "25.3.1"
 def rxBindingVersion = "0.4.0"
-def retrofitVersion = "2.2.0"
+def retrofitVersion = "2.9.0"
 def okHttpVersion = "3.7.0"
 def stethoVersion = "1.5.0"
-def butterKnifeVersion = "8.5.1"
-def daggerVersion = "2.8"
-def routerVersion = "0.2.3"
+def butterKnifeVersion = "10.2.3"
 
 project.ext {
     android = [
-            compileSdkVersion: 25,
-            buildToolsVersion: "25.0.2",
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.3",
             applicationId    : "com.baronzhang.android.modularization",
-            minSdkVersion    : 15,
-            targetSdkVersion : 25,
+            minSdkVersion    : 19,
+            targetSdkVersion : 29,
             versionCode      : 1,
             versionName      : "1.0"
     ]
 
     dependencies = [
             //android-support
-            "support-v4"                  : "com.android.support:support-v4:${supportVersion}",
-            "appcompat-v7"                : "com.android.support:appcompat-v7:${supportVersion}",
-            "design"                      : "com.android.support:design:${supportVersion}",
-            "recyclerview-v7"                : "com.android.support:recyclerview-v7:${supportVersion}",
-            "cardview-v7"                    : "com.android.support:cardview-v7:${supportVersion}",
-            "constraint-layout"           : "com.android.support.constraint:constraint-layout:1.0.0-alpha7",
 
             //java8-support
             "stream"                      : "com.annimon:stream:1.0.8",
-
-            //rx
-            "rxandroid"                   : "io.reactivex:rxandroid:1.2.1",
-            "rxbinding"                   : "com.jakewharton.rxbinding:rxbinding:${rxBindingVersion}",
-            "rxbinding-support-v4"        : "com.jakewharton.rxbinding:rxbinding-support-v4:${rxBindingVersion}",
-            "rxbinding-appcompat-v7"      : "com.jakewharton.rxbinding:rxbinding-appcompat-v7:${rxBindingVersion}",
-            "rxbinding-design"            : "com.jakewharton.rxbinding:rxbinding-design:${rxBindingVersion}",
-            "rxbinding-recyclerview-v7"   : "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:${rxBindingVersion}",
 
             //retrofit
             "retrofit"                    : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
             "adapter-rxjava"              : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
 
-            //dagger
-            "dagger"                      : "com.google.dagger:dagger:${daggerVersion}",
-            "dagger-compiler"             : "com.google.dagger:dagger-compiler:${daggerVersion}",
-
             //router
-            "router"                      : "com.baronzhang.android:router:${routerVersion}",
-            "router-compiler"             : "com.baronzhang.android:router-compiler:${routerVersion}",
+            "router"                      : "",
+            "router-compiler"             : "",
 
             //butterKnife
             "butterknife"                 : "com.jakewharton:butterknife:${butterKnifeVersion}",
@@ -63,8 +42,8 @@ project.ext {
             "okhttp3-logging-interceptor" : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
 
             //others
-            "ormlite-android"             : "com.j256.ormlite:ormlite-android:5.0",
-            "fastjson"                    : "com.alibaba:fastjson:1.2.31",
+            "ormlite-android"             : "com.j256.ormlite:ormlite-android:5.1",
+            "fastjson"                    : "com.alibaba:fastjson:1.2.73",
             "retrofit2-fastjson-converter": "com.github.BaronZ88:Retrofit2-FastJson-Converter:1.2",
 
             //test

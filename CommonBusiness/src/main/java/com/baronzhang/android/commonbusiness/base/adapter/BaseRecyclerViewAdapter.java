@@ -1,7 +1,8 @@
 package com.baronzhang.android.commonbusiness.base.adapter;
 
-import android.support.v7.widget.RecyclerView;
 import android.widget.AdapterView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com ==>> baronzhang.com)

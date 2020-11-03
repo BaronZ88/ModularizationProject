@@ -1,20 +1,15 @@
-if(isBuildModule.toBoolean()){
-    apply plugin: 'com.android.application'
-}else{
-    apply plugin: 'com.android.library'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'com.alibaba.arouter'
 
 android {
     compileSdkVersion 29
     buildToolsVersion '29.0.3'
-
     defaultConfig {
+        applicationId "com.baronzhang.android.modularization"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        resourcePrefix "new_house_"
-
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
         javaCompileOptions {
@@ -23,6 +18,12 @@ android {
             }
         }
     }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -30,27 +31,31 @@ android {
         }
     }
 
-    sourceSets {
-        main {
-            if (isBuildModule.toBoolean()) {
-                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/release/AndroidManifest.xml'
-            }
-        }
+    lintOptions {
+        abortOnError false
     }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    androidTestCompile('androidx.test.espresso:espresso-core:3.1.0', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testImplementation rootProject.ext.dependencies["junit"]
-    implementation project(':CoreModel')
-    implementation project(':CommonBusiness')
+
+    if (isBuildModule.toBoolean()) {
+        implementation project(':CoreModel')
+        implementation project(':CommonBusiness')
+    } else {
+        implementation project(':Module-IM')
+        implementation project(':NewHouseModule')
+        implementation project(':SecondHouseModule')
+    }
+
+    implementation rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
 
     implementation 'com.alibaba:arouter-api:1.5.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
+
 }

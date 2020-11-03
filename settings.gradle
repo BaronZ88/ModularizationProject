@@ -1,6 +1,6 @@
-include ':App',
+include ':app',
         ':SecondHouseModule',
-        ':InstantMessagingModule',
+        ':Module-IM',
         ':NewHouseModule',
         ':OpenSourceLibrary',
         ':CoreModel',
