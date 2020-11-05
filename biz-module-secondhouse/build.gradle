@@ -1,16 +1,21 @@
-apply plugin: 'com.android.application'
-apply plugin: 'com.alibaba.arouter'
+if (isBuildModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 29
     buildToolsVersion '29.0.3'
+
     defaultConfig {
-        applicationId "com.baronzhang.android.modularization"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
+        resourcePrefix "second_house_"
+
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
         javaCompileOptions {
@@ -32,29 +37,27 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    lintOptions {
-        abortOnError false
+    sourceSets {
+        main {
+            if (isBuildModule.toBoolean()) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+            }
+        }
     }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
-    implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    implementation project(':module-main')
-    implementation project(':biz-module-im')
-    implementation project(':biz-module-newhouse')
-    implementation project(':biz-module-secondhouse')
+    implementation project(path: ':lib-core-model')
+    implementation project(path: ':lib-common-business')
 
-    implementation project(':lib-core-model')
-    implementation project(':lib-common-business')
-
-    implementation rootProject.ext.dependencies["butterknife"]
-    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    implementation project(path: ':biz-service-im')
+    implementation project(path: ':biz-service-newhouse')
+    implementation project(path: ':biz-service-secondhouse')
 
     implementation 'com.alibaba:arouter-api:1.5.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'

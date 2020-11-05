@@ -13,6 +13,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:4.1.0'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath "com.alibaba:arouter-register:$arouter_register_version"
+        classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'
     }
 }
 
