@@ -1,4 +1,4 @@
-package com.baronzhang.android.coremodel.entities;
+package com.baronzhang.android.data.entities;
 
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)

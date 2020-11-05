@@ -1,4 +1,4 @@
-package com.baronzhang.android.coremodel.http.converter;
+package com.baronzhang.android.data.http.converter;
 
 import com.alibaba.fastjson.serializer.SerializeConfig;
 

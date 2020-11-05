@@ -1,4 +1,4 @@
-package com.baronzhang.android.coremodel.preferences;
+package com.baronzhang.android.data.preferences;
 
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)

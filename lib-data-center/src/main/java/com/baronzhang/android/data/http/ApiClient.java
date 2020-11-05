@@ -1,14 +1,14 @@
-package com.baronzhang.android.coremodel.http;
+package com.baronzhang.android.data.http;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 
-import com.baronzhang.android.coremodel.BuildConfig;
-import com.baronzhang.android.coremodel.http.configuration.ApiConfiguration;
-import com.baronzhang.android.coremodel.http.converter.FastJsonConverterFactory;
-import com.baronzhang.android.coremodel.http.services.AppService;
-import com.baronzhang.android.coremodel.http.services.IMService;
-import com.baronzhang.android.coremodel.http.services.NewHouseService;
-import com.baronzhang.android.coremodel.http.services.SecondHouseService;
+import com.baronzhang.android.data.BuildConfig;
+import com.baronzhang.android.data.http.configuration.ApiConfiguration;
+import com.baronzhang.android.data.http.converter.FastJsonConverterFactory;
+import com.baronzhang.android.data.http.services.AppService;
+import com.baronzhang.android.data.http.services.IMService;
+import com.baronzhang.android.data.http.services.NewHouseService;
+import com.baronzhang.android.data.http.services.SecondHouseService;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;

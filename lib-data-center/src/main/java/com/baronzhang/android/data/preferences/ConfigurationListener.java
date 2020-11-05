@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.baronzhang.android.coremodel.preferences;
+package com.baronzhang.android.data.preferences;
 
 public interface ConfigurationListener {
 

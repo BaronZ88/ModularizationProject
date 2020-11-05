@@ -1,4 +1,4 @@
-package com.baronzhang.android.coremodel.db;
+package com.baronzhang.android.data.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,7 +8,7 @@ import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
 
-import com.baronzhang.android.coremodel.entities.User;
+import com.baronzhang.android.data.entities.User;
 
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)

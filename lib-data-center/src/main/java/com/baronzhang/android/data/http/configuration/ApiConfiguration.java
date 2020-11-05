@@ -1,4 +1,4 @@
-package com.baronzhang.android.coremodel.http.configuration;
+package com.baronzhang.android.data.http.configuration;
 
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)

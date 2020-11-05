@@ -1,4 +1,4 @@
-package com.baronzhang.android.coremodel.db;
+package com.baronzhang.android.data.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

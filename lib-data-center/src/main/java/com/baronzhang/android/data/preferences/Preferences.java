@@ -1,4 +1,4 @@
-package com.baronzhang.android.coremodel.preferences;
+package com.baronzhang.android.data.preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
