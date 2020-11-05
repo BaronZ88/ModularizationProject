@@ -50,8 +50,8 @@ dependencies {
     implementation project(':biz-module-newhouse')
     implementation project(':biz-module-secondhouse')
 
-    implementation project(':lib-core-model')
     implementation project(':lib-common-business')
+    implementation project(':lib-data-center')
 
     implementation rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]

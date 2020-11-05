@@ -52,8 +52,8 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    implementation project(path: ':lib-core-model')
     implementation project(path: ':lib-common-business')
+    implementation project(path: ':lib-data-center')
 
     implementation project(path: ':biz-service-im')
     implementation project(path: ':biz-service-newhouse')
