@@ -8,6 +8,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.baronzhang.android.commonbusiness.base.activity.BaseActivity;
 import com.baronzhang.android.im.api.IMRouterTable;
+import com.baronzhang.android.newhouse.api.NewHouseServiceProvider;
 
 import java.util.ArrayList;
 
@@ -26,11 +27,13 @@ public class IMMainActivity extends BaseActivity {
 
         ARouter.getInstance().inject(this);
 
-        TextView textView1 = (TextView) findViewById(R.id.textView1);
-        TextView textView2 = (TextView) findViewById(R.id.textView2);
+        TextView textView1 = findViewById(R.id.textView1);
+        TextView textView2 = findViewById(R.id.textView2);
+        TextView textView4 = findViewById(R.id.textView4);
 
         textView1.setText("城市ID: " + cityId);
         textView2.setText("经纪人ID列表: " + brokerIdList);
 
+        textView4.setText(NewHouseServiceProvider.getNewHouseService().fetchNewHouseData().toString());
     }
 }

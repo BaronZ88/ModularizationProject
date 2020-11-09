@@ -27,10 +27,14 @@ public class SecondHouseMainActivity extends BaseActivity {
 
         ARouter.getInstance().inject(this);
 
-        TextView textView1 = (TextView) findViewById(R.id.textView1);
-        TextView textView2 = (TextView) findViewById(R.id.textView2);
+        TextView textView1 = findViewById(R.id.textView1);
+        TextView textView2 = findViewById(R.id.textView2);
 
         textView1.setText("城市ID: " + cityId);
-        textView2.setText("房源列表: " + houseList);
+        StringBuilder houseListStr = new StringBuilder();
+        for(HouseDetail houseDetail : houseList){
+            houseListStr.append(houseDetail.toString()).append("\n");
+        }
+        textView2.setText("房源列表: \n" + houseListStr.substring(0, houseListStr.length()-1));
     }
 }

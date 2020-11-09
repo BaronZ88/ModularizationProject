@@ -24,11 +24,9 @@ public class HouseDetail implements Parcelable {
 
     @Override
     public String toString() {
-        return "HouseDetail{" +
-                "房源ID：'" + houseId + '\'' +
+        return " 房源ID：'" + houseId + '\'' +
                 ", 小区：'" + communityName + '\'' +
-                ", 面积：" + area +
-                '}';
+                ", 面积：" + area;
     }
 
     public String getHouseId() {

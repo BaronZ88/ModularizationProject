@@ -61,9 +61,7 @@ public class MainActivity extends BaseActivity {
         ArrayList<HouseDetail> houseDetailList = new ArrayList<>();
         houseDetailList.add(new HouseDetail("10001", "潍坊一村", 88));
         houseDetailList.add(new HouseDetail("10002", "潍坊二村", 120));
-        houseDetailList.add(new HouseDetail("10003", "潍坊二村", 99));
         houseDetailList.add(new HouseDetail("10004", "潍坊三村", 86));
-        houseDetailList.add(new HouseDetail("10005", "潍坊五村", 80));
 
         ARouter.getInstance().build(SecondHouseRouterTable.PATH_ACTIVITY_MAIN)
                 .withString("cityId", "111")
