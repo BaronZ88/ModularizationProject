@@ -42,7 +42,7 @@ public class NewHouseProviderImpl implements NewHouseProvider {
     }
 
     @Override
-    public <T> void callNewHouseApi(ResponseCallback<T> callback) {
+    public void callNewHouseApi(ResponseCallback<NewHouseApiData> callback) {
         ApiClient.getInstance().getService(new ApiServiceWrap()).getGitHubUser("BaronZ88")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -69,7 +69,7 @@ public class NewHouseProviderImpl implements NewHouseProvider {
                             data.setFollowers(gitHubUser.getFollowers());
                             data.setLocation(gitHubUser.getLocation());
                             data.setName(gitHubUser.getName());
-                            callback.onSuccess((T) data);
+                            callback.onSuccess(data);
                         }else{
                             callback.onFailed(new ErrorMessage(405, "未获取到数据"));
                         }

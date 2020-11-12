@@ -10,5 +10,5 @@ public interface NewHouseProvider extends IProvider {
 
     NewHouseData fetchNewHouseData();
 
-    <T> void callNewHouseApi(ResponseCallback<T> callback);
+    void callNewHouseApi(ResponseCallback<NewHouseApiData> callback);
 }

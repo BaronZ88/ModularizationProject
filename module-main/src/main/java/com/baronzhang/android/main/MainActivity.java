@@ -43,7 +43,6 @@ public class MainActivity extends BaseActivity {
         TextView newHouseTextView = findViewById(R.id.new_house_text_view);
         NewHouseData newHouseData = NewHouseProviderManager.getNewHouseProvider().fetchNewHouseData();
         newHouseTextView.setText(newHouseData.toString());
-
         NewHouseProviderManager.getNewHouseProvider().callNewHouseApi(new ResponseCallback<NewHouseApiData>() {
             @Override
             public void onSuccess(NewHouseApiData data) {
@@ -55,7 +54,6 @@ public class MainActivity extends BaseActivity {
                 newHouseTextView.setText(String.format("%s\n\n%s", newHouseTextView.getText(), errorMsg));
             }
         });
-
 
         SecondHouseData secondHouseData = SecondHouseProviderManager.getSecondHouseProvider().fetchSecondHouseData();
         ((TextView) findViewById(R.id.second_house_text_view)).setText(secondHouseData.toString());
