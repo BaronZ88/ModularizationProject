@@ -55,9 +55,9 @@ dependencies {
     implementation project(path: ':lib-common-business')
     implementation project(path: ':lib-data-center')
 
-    implementation project(path: ':biz-service-im')
     implementation project(path: ':biz-service-newhouse')
     implementation project(path: ':biz-service-secondhouse')
+    implementation project(path: ':biz-service-renthouse')
 
     implementation 'com.alibaba:arouter-api:1.5.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'

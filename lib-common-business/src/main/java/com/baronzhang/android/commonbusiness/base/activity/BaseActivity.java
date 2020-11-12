@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 /**
- * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com ==>> baronzhang.com)
+ * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com) (baron[dot]zhanglei[at]gmail[dot]com ==>> baronzhang.com)
  */
 public class BaseActivity extends AppCompatActivity {
 

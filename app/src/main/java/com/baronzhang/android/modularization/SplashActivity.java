@@ -10,7 +10,7 @@ import com.baronzhang.android.main.MainActivity;
 /**
  * App闪屏页
  *
- * @author baronzhang
+ * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)
  */
 public class SplashActivity extends AppCompatActivity {
 

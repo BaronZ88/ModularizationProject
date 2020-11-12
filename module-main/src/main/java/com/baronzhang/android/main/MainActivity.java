@@ -6,15 +6,18 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.baronzhang.android.commonbusiness.base.activity.BaseActivity;
 import com.baronzhang.android.commonbusiness.model.HouseDetail;
-import com.baronzhang.android.im.api.IMData;
-import com.baronzhang.android.im.api.IMRouterTable;
-import com.baronzhang.android.im.api.IMServiceProvider;
+import com.baronzhang.android.newhouse.api.NewHouseApiData;
+import com.baronzhang.android.renthouse.api.RentHouseData;
+import com.baronzhang.android.renthouse.api.RentHouseRouterTable;
+import com.baronzhang.android.renthouse.api.RentHouseProviderManager;
 import com.baronzhang.android.newhouse.api.NewHouseData;
 import com.baronzhang.android.newhouse.api.NewHouseRouterTable;
-import com.baronzhang.android.newhouse.api.NewHouseServiceProvider;
+import com.baronzhang.android.newhouse.api.NewHouseProviderManager;
 import com.baronzhang.android.secondhouse.api.SecondHouseData;
 import com.baronzhang.android.secondhouse.api.SecondHouseRouterTable;
-import com.baronzhang.android.secondhouse.api.SecondHouseServiceProvider;
+import com.baronzhang.android.secondhouse.api.SecondHouseProviderManager;
+import com.baronzhang.android.service.base.ErrorMessage;
+import com.baronzhang.android.service.base.ResponseCallback;
 
 import java.util.ArrayList;
 
@@ -25,7 +28,7 @@ import butterknife.Unbinder;
 /**
  * App首页
  *
- * @author baronzhang
+ * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)
  */
 public class MainActivity extends BaseActivity {
 
@@ -37,14 +40,28 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         unbinder = ButterKnife.bind(this);
 
-        NewHouseData newHouseData = NewHouseServiceProvider.getNewHouseService().fetchNewHouseData();
-        ((TextView) findViewById(R.id.new_house_text_view)).setText(newHouseData.toString());
+        TextView newHouseTextView = findViewById(R.id.new_house_text_view);
+        NewHouseData newHouseData = NewHouseProviderManager.getNewHouseProvider().fetchNewHouseData();
+        newHouseTextView.setText(newHouseData.toString());
 
-        SecondHouseData secondHouseData = SecondHouseServiceProvider.getSecondHouseService().fetchSecondHouseData();
+        NewHouseProviderManager.getNewHouseProvider().callNewHouseApi(new ResponseCallback<NewHouseApiData>() {
+            @Override
+            public void onSuccess(NewHouseApiData data) {
+                newHouseTextView.setText(String.format("%s\n\n%s", newHouseTextView.getText(), data.toString()));
+            }
+
+            @Override
+            public void onFailed(ErrorMessage errorMsg) {
+                newHouseTextView.setText(String.format("%s\n\n%s", newHouseTextView.getText(), errorMsg));
+            }
+        });
+
+
+        SecondHouseData secondHouseData = SecondHouseProviderManager.getSecondHouseProvider().fetchSecondHouseData();
         ((TextView) findViewById(R.id.second_house_text_view)).setText(secondHouseData.toString());
 
-        IMData imData = IMServiceProvider.getIMService().fetchIMData();
-        ((TextView) findViewById(R.id.im_text_view)).setText(imData.toString());
+        RentHouseData rentHouseData = RentHouseProviderManager.getRentHouseProvider().fetchRentHouseData();
+        ((TextView) findViewById(R.id.rent_house_text_view)).setText(rentHouseData.toString());
     }
 
     @OnClick(R2.id.btn_goto_new_house)
@@ -69,13 +86,13 @@ public class MainActivity extends BaseActivity {
                 .navigation();
     }
 
-    @OnClick(R2.id.btn_goto_im)
-    void startIMActivity() {
+    @OnClick(R2.id.btn_goto_rent_house)
+    void startRentHouseActivity() {
         ArrayList<Integer> brokerIdList = new ArrayList<>();
         brokerIdList.add(20000);
         brokerIdList.add(20001);
         brokerIdList.add(20002);
-        ARouter.getInstance().build(IMRouterTable.PATH_ACTIVITY_MAIN)
+        ARouter.getInstance().build(RentHouseRouterTable.PATH_ACTIVITY_MAIN)
                 .withString("cityId", "112")
                 .withIntegerArrayList("brokerIdList", brokerIdList)
                 .navigation();

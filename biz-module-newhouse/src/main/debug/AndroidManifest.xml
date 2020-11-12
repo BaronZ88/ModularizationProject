@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/NewHouseAppTheme">
         <activity
-            android:name="com.baronzhang.android.newhouse.NewHouseMainActivity"
+            android:name="com.baronzhang.android.newhouse.MainActivity"
             android:label="@string/new_house_label_home_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 /**
- * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com ==>> baronzhang.com)
+ * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com) (baron[dot]zhanglei[at]gmail[dot]com ==>> baronzhang.com)
  *         16/4/13
  */
 public final class ActivityUtils {

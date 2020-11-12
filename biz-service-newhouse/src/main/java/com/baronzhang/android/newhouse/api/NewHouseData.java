@@ -1,7 +1,7 @@
 package com.baronzhang.android.newhouse.api;
 
 /**
- * @author baronzhang
+ * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)
  */
 public final class NewHouseData {
 

@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com ==>> baronzhang.com)
+ * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com) (baron[dot]zhanglei[at]gmail[dot]com ==>> baronzhang.com)
  *         2017/3/13
  */
 public class HouseDetail implements Parcelable {

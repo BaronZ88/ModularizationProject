@@ -1,14 +1,15 @@
 package com.baronzhang.android.data.http;
 
+import com.baronzhang.android.data.http.service.ServiceWrap;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 
 import com.baronzhang.android.data.BuildConfig;
 import com.baronzhang.android.data.http.configuration.ApiConfiguration;
 import com.baronzhang.android.data.http.converter.FastJsonConverterFactory;
-import com.baronzhang.android.data.http.services.AppService;
-import com.baronzhang.android.data.http.services.IMService;
-import com.baronzhang.android.data.http.services.NewHouseService;
-import com.baronzhang.android.data.http.services.SecondHouseService;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -16,28 +17,34 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)
- *         2017/1/5
+ * 2017/1/5
  */
 public final class ApiClient {
 
-    public static AppService appService;
-    public static IMService imService;
-    public static NewHouseService newHouseService;
-    public static SecondHouseService secondHouseService;
+    private OkHttpClient client;
+    private ApiConfiguration configuration;
+    private Map<String, Object> apiServiceMap;
 
-    public static ApiConfiguration configuration;
+    private static volatile ApiClient instance;
 
-    public static void init(ApiConfiguration configuration){
-
-        ApiClient.configuration = configuration;
-
-        appService = initService("", AppService.class);
-        imService = initService("", IMService.class);
-        newHouseService = initService("", NewHouseService.class);
-        secondHouseService = initService("", SecondHouseService.class);
+    private ApiClient() {
     }
 
-    private static <T> T initService(String baseUrl, Class<T> clazz) {
+    public static ApiClient getInstance(){
+        if(instance == null){
+            synchronized (ApiClient.class){
+                if(instance == null){
+                    instance = new ApiClient();
+                }
+            }
+        }
+        return instance;
+    }
+
+    public void init(ApiConfiguration configuration) {
+
+        this.configuration = configuration;
+        this.apiServiceMap = new HashMap<>();
 
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
         if (BuildConfig.DEBUG) {
@@ -45,15 +52,31 @@ public final class ApiClient {
             httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             builder.addInterceptor(httpLoggingInterceptor).addNetworkInterceptor(new StethoInterceptor());
         }
-        OkHttpClient client = builder.build();
+        this.client = builder.build();
+    }
+
+    public synchronized <T> T getService(ServiceWrap<T> proxy) {
+
+        String host = proxy.getHost();
+        Class<T> serviceClass = proxy.getRealService();
+
+        String key = proxy.getModuleName() + "$$" + proxy.getIdentify();
+
+        if (apiServiceMap.containsKey(key)) {
+            Object service = apiServiceMap.get(key);
+            if (serviceClass.isInstance(service)) {
+                return serviceClass.cast(service);
+            }
+        }
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl)
+                .baseUrl(host)
                 .addConverterFactory(FastJsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .client(client)
                 .build();
-
-        return retrofit.create(clazz);
+        T service = retrofit.create(serviceClass);
+        apiServiceMap.put(key, service);
+        return service;
     }
 }

@@ -45,9 +45,9 @@ dependencies {
     implementation project(':lib-common-business')
     implementation project(':lib-data-center')
 
-    implementation project(path: ':biz-service-im')
     implementation project(path: ':biz-service-newhouse')
     implementation project(path: ':biz-service-secondhouse')
+    implementation project(path: ':biz-service-renthouse')
 
     implementation rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]

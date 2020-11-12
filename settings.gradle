@@ -1,11 +1,14 @@
 include ':app',
         ':module-main',
-        ':biz-module-im',
         ':biz-module-newhouse',
         ':biz-module-secondhouse',
-        ':biz-service-im',
+        ':biz-module-renthouse',
+
+        ':biz-service-base',
         ':biz-service-newhouse',
         ':biz-service-secondhouse',
+        ':biz-service-renthouse',
+
         ':lib-common-business',
         ':lib-data-center',
         ':lib-open-source'

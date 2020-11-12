@@ -46,9 +46,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     implementation project(':module-main')
-    implementation project(':biz-module-im')
     implementation project(':biz-module-newhouse')
     implementation project(':biz-module-secondhouse')
+    implementation project(':biz-module-renthouse')
 
     implementation project(':lib-common-business')
     implementation project(':lib-data-center')
