@@ -6,7 +6,7 @@ import com.baronzhang.android.service.base.ResponseCallback;
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)
  */
-public class NewHouseProviderManager {
+public class NewHouseProviderHelper {
 
     public static NewHouseProvider getNewHouseProvider(){
         return (NewHouseProvider) ARouter.getInstance().build(NewHouseRouterTable.PATH_SERVICE_NEW_HOUSE).navigation();

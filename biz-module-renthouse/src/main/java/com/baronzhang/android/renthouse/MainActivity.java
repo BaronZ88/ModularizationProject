@@ -8,7 +8,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.baronzhang.android.commonbusiness.base.activity.BaseActivity;
 import com.baronzhang.android.renthouse.api.RentHouseRouterTable;
-import com.baronzhang.android.newhouse.api.NewHouseProviderManager;
+import com.baronzhang.android.newhouse.api.NewHouseProviderHelper;
 
 import java.util.ArrayList;
 
@@ -34,6 +34,6 @@ public class MainActivity extends BaseActivity {
         textView1.setText("城市ID: " + cityId);
         textView2.setText("经纪人ID列表: " + brokerIdList);
 
-        textView4.setText(NewHouseProviderManager.getNewHouseProvider().fetchNewHouseData().toString());
+        textView4.setText(NewHouseProviderHelper.getNewHouseProvider().fetchNewHouseData().toString());
     }
 }

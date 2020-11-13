@@ -23,6 +23,8 @@ public class RentHouseProviderImpl implements RentHouseProvider {
         RentHouseData data = new RentHouseData();
         data.setId("123123123");
         data.setBrokerName("王大仙");
+        data.setAge(25);
+        data.setAddress("上海市浦东新区东方路1217号88楼8801号");
         return data;
     }
 }

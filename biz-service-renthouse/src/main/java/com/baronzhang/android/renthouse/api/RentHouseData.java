@@ -7,6 +7,8 @@ public class RentHouseData {
 
     private String id;
     private String brokerName;
+    private int age;
+    private String address;
 
     public String getId() {
         return id;
@@ -24,10 +26,28 @@ public class RentHouseData {
         this.brokerName = brokerName;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return " RentHouseData:\n" +
-                "   id='" + id + '\'' + "\n" +
-                "   brokerName='" + brokerName + '\'';
+                "   id=" + id + "\n" +
+                "   brokerName=" + brokerName + "\n" +
+                "   age=" + age + "岁" + "\n" +
+                "   address=" + address;
     }
 }

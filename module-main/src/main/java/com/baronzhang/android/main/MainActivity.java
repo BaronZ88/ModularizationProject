@@ -9,13 +9,13 @@ import com.baronzhang.android.commonbusiness.model.HouseDetail;
 import com.baronzhang.android.newhouse.api.NewHouseApiData;
 import com.baronzhang.android.renthouse.api.RentHouseData;
 import com.baronzhang.android.renthouse.api.RentHouseRouterTable;
-import com.baronzhang.android.renthouse.api.RentHouseProviderManager;
+import com.baronzhang.android.renthouse.api.RentHouseProviderHelper;
 import com.baronzhang.android.newhouse.api.NewHouseData;
 import com.baronzhang.android.newhouse.api.NewHouseRouterTable;
-import com.baronzhang.android.newhouse.api.NewHouseProviderManager;
+import com.baronzhang.android.newhouse.api.NewHouseProviderHelper;
 import com.baronzhang.android.secondhouse.api.SecondHouseData;
 import com.baronzhang.android.secondhouse.api.SecondHouseRouterTable;
-import com.baronzhang.android.secondhouse.api.SecondHouseProviderManager;
+import com.baronzhang.android.secondhouse.api.SecondHouseProviderHelper;
 import com.baronzhang.android.service.base.ErrorMessage;
 import com.baronzhang.android.service.base.ResponseCallback;
 
@@ -41,9 +41,9 @@ public class MainActivity extends BaseActivity {
         unbinder = ButterKnife.bind(this);
 
         TextView newHouseTextView = findViewById(R.id.new_house_text_view);
-        NewHouseData newHouseData = NewHouseProviderManager.getNewHouseProvider().fetchNewHouseData();
+        NewHouseData newHouseData = NewHouseProviderHelper.getNewHouseProvider().fetchNewHouseData();
         newHouseTextView.setText(newHouseData.toString());
-        NewHouseProviderManager.getNewHouseProvider().callNewHouseApi(new ResponseCallback<NewHouseApiData>() {
+        NewHouseProviderHelper.getNewHouseProvider().callNewHouseApi(new ResponseCallback<NewHouseApiData>() {
             @Override
             public void onSuccess(NewHouseApiData data) {
                 newHouseTextView.setText(String.format("%s\n\n%s", newHouseTextView.getText(), data.toString()));
@@ -55,10 +55,10 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        SecondHouseData secondHouseData = SecondHouseProviderManager.getSecondHouseProvider().fetchSecondHouseData();
+        SecondHouseData secondHouseData = SecondHouseProviderHelper.getSecondHouseProvider().fetchSecondHouseData();
         ((TextView) findViewById(R.id.second_house_text_view)).setText(secondHouseData.toString());
 
-        RentHouseData rentHouseData = RentHouseProviderManager.getRentHouseProvider().fetchRentHouseData();
+        RentHouseData rentHouseData = RentHouseProviderHelper.getRentHouseProvider().fetchRentHouseData();
         ((TextView) findViewById(R.id.rent_house_text_view)).setText(rentHouseData.toString());
     }
 
