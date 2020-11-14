@@ -24,6 +24,10 @@ import java.util.ArrayList;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import rx.Observable;
+import rx.Subscription;
+import rx.subscriptions.CompositeSubscription;
+import rx.subscriptions.Subscriptions;
 
 /**
  * App首页
@@ -32,6 +36,7 @@ import butterknife.Unbinder;
  */
 public class MainActivity extends BaseActivity {
 
+    private CompositeSubscription subscriptions;
     private Unbinder unbinder;
 
     @Override
@@ -39,11 +44,12 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         unbinder = ButterKnife.bind(this);
+        subscriptions = new CompositeSubscription();
 
         TextView newHouseTextView = findViewById(R.id.new_house_text_view);
         NewHouseData newHouseData = NewHouseProviderHelper.getNewHouseProvider().fetchNewHouseData();
         newHouseTextView.setText(newHouseData.toString());
-        NewHouseProviderHelper.getNewHouseProvider().callNewHouseApi(new ResponseCallback<NewHouseApiData>() {
+        Subscription subscription = NewHouseProviderHelper.getNewHouseProvider().callNewHouseApi(new ResponseCallback<NewHouseApiData>() {
             @Override
             public void onSuccess(NewHouseApiData data) {
                 newHouseTextView.setText(String.format("%s\n\n%s", newHouseTextView.getText(), data.toString()));
@@ -54,6 +60,7 @@ public class MainActivity extends BaseActivity {
                 newHouseTextView.setText(String.format("%s\n\n%s", newHouseTextView.getText(), errorMsg));
             }
         });
+        subscriptions.add(subscription);
 
         SecondHouseData secondHouseData = SecondHouseProviderHelper.getSecondHouseProvider().fetchSecondHouseData();
         ((TextView) findViewById(R.id.second_house_text_view)).setText(secondHouseData.toString());
@@ -101,5 +108,7 @@ public class MainActivity extends BaseActivity {
         super.onDestroy();
         if (unbinder != null)
             unbinder.unbind();
+        if (subscriptions != null)
+            subscriptions.clear();
     }
 }

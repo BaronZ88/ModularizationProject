@@ -14,7 +14,9 @@ import com.baronzhang.android.newhouse.model.GitHubUser;
 import com.baronzhang.android.service.base.ErrorMessage;
 import com.baronzhang.android.service.base.ResponseCallback;
 
+import rx.Observable;
 import rx.Subscriber;
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -42,9 +44,8 @@ public class NewHouseProviderImpl implements NewHouseProvider {
     }
 
     @Override
-    public void callNewHouseApi(ResponseCallback<NewHouseApiData> callback) {
-        ApiClient.getInstance().getService(new ApiServiceWrap()).getGitHubUser("BaronZ88")
-                .subscribeOn(Schedulers.io())
+    public Subscription callNewHouseApi(ResponseCallback<NewHouseApiData> callback) {
+        return ApiClient.getInstance().getService(new ApiServiceWrap()).getGitHubUser("BaronZ88").subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<GitHubUser>() {
                     @Override
@@ -59,7 +60,7 @@ public class NewHouseProviderImpl implements NewHouseProvider {
 
                     @Override
                     public void onNext(GitHubUser gitHubUser) {
-                        if(gitHubUser!=null){
+                        if (gitHubUser != null) {
                             NewHouseApiData data = new NewHouseApiData();
                             data.setAvatarUrl(gitHubUser.getAvatarUrl());
                             data.setBio(gitHubUser.getBio());
@@ -70,7 +71,7 @@ public class NewHouseProviderImpl implements NewHouseProvider {
                             data.setLocation(gitHubUser.getLocation());
                             data.setName(gitHubUser.getName());
                             callback.onSuccess(data);
-                        }else{
+                        } else {
                             callback.onFailed(new ErrorMessage(405, "未获取到数据"));
                         }
                     }
