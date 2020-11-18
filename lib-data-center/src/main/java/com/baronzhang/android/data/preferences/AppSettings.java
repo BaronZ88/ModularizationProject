@@ -3,7 +3,7 @@ package com.baronzhang.android.data.preferences;
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)
  */
-public enum WeatherSettings {
+public enum AppSettings {
 
     /*默认配置项*/
     SETTINGS_FIRST_USE("first_use", Boolean.TRUE),
@@ -13,7 +13,7 @@ public enum WeatherSettings {
     private final String mId;
     private final Object mDefaultValue;
 
-    WeatherSettings(String id, Object defaultValue) {
+    AppSettings(String id, Object defaultValue) {
         this.mId = id;
         this.mDefaultValue = defaultValue;
     }
@@ -26,9 +26,9 @@ public enum WeatherSettings {
         return this.mDefaultValue;
     }
 
-    public static WeatherSettings fromId(String id) {
-        WeatherSettings[] values = values();
-        for (WeatherSettings value : values) {
+    public static AppSettings fromId(String id) {
+        AppSettings[] values = values();
+        for (AppSettings value : values) {
             if (value.mId.equals(id)) {
                 return value;
             }

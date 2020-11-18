@@ -4,13 +4,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/im_ic_launcher"
-        android:label="@string/im_app_name"
+        android:icon="@mipmap/rent_house_ic_launcher"
+        android:label="@string/rent_house_app_name"
         android:supportsRtl="true"
-        android:theme="@style/IMAppTheme">
+        android:theme="@style/RentHouseAppTheme">
         <activity
             android:name="com.baronzhang.android.renthouse.MainActivity"
-            android:label="@string/im_label_home_page">
+            android:label="@string/rent_house_label_home_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

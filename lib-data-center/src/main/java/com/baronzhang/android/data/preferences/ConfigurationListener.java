@@ -17,5 +17,5 @@ package com.baronzhang.android.data.preferences;
 
 public interface ConfigurationListener {
 
-    void onConfigurationChanged(WeatherSettings pref, Object newValue);
+    void onConfigurationChanged(AppSettings pref, Object newValue);
 }

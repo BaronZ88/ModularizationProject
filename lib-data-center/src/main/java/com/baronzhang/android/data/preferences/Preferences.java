@@ -22,7 +22,7 @@ public final class Preferences {
 
     private static final String SETTINGS_FILENAME = "com.baronzhang.android.modularization";
 
-    private static final List<ConfigurationListener> CONFIGURATION_LISTENERS = Collections.synchronizedList(new ArrayList<ConfigurationListener>());
+    private static final List<ConfigurationListener> CONFIGURATION_LISTENERS = Collections.synchronizedList(new ArrayList<>());
 
     private Context context;
     private static volatile Preferences instance;
@@ -45,9 +45,9 @@ public final class Preferences {
     public void loadDefaults() {
         //设置SharedPreferences默认值
         try {
-            Map<WeatherSettings, Object> defaultPrefs = new HashMap<>();
-            WeatherSettings[] values = WeatherSettings.values();
-            for (WeatherSettings value : values) {
+            Map<AppSettings, Object> defaultPrefs = new HashMap<>();
+            AppSettings[] values = AppSettings.values();
+            for (AppSettings value : values) {
                 defaultPrefs.put(value, value.getDefaultValue());
             }
             savePreferences(defaultPrefs, true);
@@ -68,22 +68,22 @@ public final class Preferences {
         return context.getSharedPreferences(SETTINGS_FILENAME, Context.MODE_PRIVATE);
     }
 
-    public void savePreference(WeatherSettings pref, Object value) throws InvalidClassException {
-        Map<WeatherSettings, Object> prefs = new HashMap<>();
+    public void savePreference(AppSettings pref, Object value) throws InvalidClassException {
+        Map<AppSettings, Object> prefs = new HashMap<>();
         prefs.put(pref, value);
         savePreferences(prefs, false);
     }
 
-    public void savePreferences(Map<WeatherSettings, Object> prefs) throws InvalidClassException {
+    public void savePreferences(Map<AppSettings, Object> prefs) throws InvalidClassException {
         savePreferences(prefs, false);
     }
 
-    private void savePreferences(Map<WeatherSettings, Object> prefs, boolean noSaveIfExists) throws InvalidClassException {
+    private void savePreferences(Map<AppSettings, Object> prefs, boolean noSaveIfExists) throws InvalidClassException {
 
         SharedPreferences sp = getSharedPreferences(context);
         SharedPreferences.Editor editor = sp.edit();
 
-        for (WeatherSettings pref : prefs.keySet()) {
+        for (AppSettings pref : prefs.keySet()) {
 
             Object value = prefs.get(pref);
 
@@ -114,7 +114,7 @@ public final class Preferences {
         editor.apply();
 
         if (CONFIGURATION_LISTENERS != null && CONFIGURATION_LISTENERS.size() > 0) {
-            for (WeatherSettings pref : prefs.keySet()) {
+            for (AppSettings pref : prefs.keySet()) {
                 Object value = prefs.get(pref);
                 for (ConfigurationListener listener : CONFIGURATION_LISTENERS) {
                     listener.onConfigurationChanged(pref, value);

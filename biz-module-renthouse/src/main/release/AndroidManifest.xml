@@ -7,7 +7,7 @@
         android:supportsRtl="true">
         <activity
             android:name="com.baronzhang.android.renthouse.MainActivity"
-            android:label="@string/im_label_home_page">
+            android:label="@string/rent_house_label_home_page">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />

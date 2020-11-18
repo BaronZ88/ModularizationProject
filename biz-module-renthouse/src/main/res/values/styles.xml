@@ -1,11 +1,11 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="IMAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="RentHouseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/im_colorPrimary</item>
-        <item name="colorPrimaryDark">@color/im_colorPrimaryDark</item>
-        <item name="colorAccent">@color/im_colorAccent</item>
+        <item name="colorPrimary">@color/rent_house_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/rent_house_colorPrimaryDark</item>
+        <item name="colorAccent">@color/rent_house_colorAccent</item>
     </style>
 
 </resources>

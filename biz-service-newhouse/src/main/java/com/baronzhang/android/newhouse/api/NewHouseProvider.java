@@ -3,7 +3,6 @@ package com.baronzhang.android.newhouse.api;
 import com.alibaba.android.arouter.facade.template.IProvider;
 import com.baronzhang.android.service.base.ResponseCallback;
 
-import rx.Observable;
 import rx.Subscription;
 
 /**

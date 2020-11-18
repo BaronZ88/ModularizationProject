@@ -31,7 +31,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_house_activity_new_house_main);
+        setContentView(R.layout.new_house_activity_main);
         unbinder = ButterKnife.bind(this);
         ARouter.getInstance().inject(this);
 
