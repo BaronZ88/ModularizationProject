@@ -3,7 +3,7 @@
     package="com.baronzhang.android.main">
 
     <application>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name="com.modularization.android.main.MainActivity"></activity>
     </application>
 
 </manifest>

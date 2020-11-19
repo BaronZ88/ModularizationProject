@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:supportsRtl="true">
         <activity
-            android:name="com.baronzhang.android.renthouse.MainActivity"
+            android:name="com.baronzhang.android.renthouse.com.modularization.android.renthouse.MainActivity"
             android:label="@string/rent_house_label_home_page">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />

@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/SecondHouseAppTheme">
         <activity
-            android:name="com.baronzhang.android.secondhouse.MainActivity"
+            android:name="com.baronzhang.android.secondhouse.com.modularization.android.secondhouse.MainActivity"
             android:label="@string/second_house_label_home_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

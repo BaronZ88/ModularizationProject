@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:supportsRtl="true">
         <activity
-            android:name="com.baronzhang.android.newhouse.MainActivity"
+            android:name="com.baronzhang.android.newhouse.com.modularization.android.newhouse.MainActivity"
             android:label="@string/new_house_label_home_page">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
