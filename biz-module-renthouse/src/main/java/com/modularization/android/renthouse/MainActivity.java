@@ -7,7 +7,6 @@ import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.modularization.android.commonbusiness.base.activity.BaseActivity;
-import com.baronzhang.android.renthouse.R;
 import com.modularization.android.renthouse.api.RentHouseRouterTable;
 import com.modularization.android.newhouse.api.NewHouseProviderHelper;
 

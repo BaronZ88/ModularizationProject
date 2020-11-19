@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.modularization.android.main.MainActivity;
-import com.baronzhang.android.modularization.R;
 
 /**
  * App闪屏页
