@@ -7,7 +7,7 @@ project.ext {
     android = [
             compileSdkVersion: 29,
             buildToolsVersion: "29.0.3",
-            applicationId    : "com.baronzhang.android.modularization",
+            applicationId    : "com.modularization.app",
             minSdkVersion    : 19,
             targetSdkVersion : 29,
             versionCode      : 1,

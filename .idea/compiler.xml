@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.7">
-      <module name="ModularizationProject.app" target="1.8" />
-      <module name="ModularizationProject.biz-module-newhouse" target="1.8" />
-      <module name="ModularizationProject.biz-module-renthouse" target="1.8" />
-      <module name="ModularizationProject.biz-module-secondhouse" target="1.8" />
-      <module name="ModularizationProject.biz-service-newhouse" target="1.8" />
-      <module name="ModularizationProject.biz-service-renthouse" target="1.8" />
-      <module name="ModularizationProject.biz-service-secondhouse" target="1.8" />
-      <module name="ModularizationProject.lib-common-business" target="1.8" />
-      <module name="ModularizationProject.lib-data-center" target="1.8" />
-      <module name="ModularizationProject.lib-open-source" target="1.8" />
-      <module name="ModularizationProject.module-main" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8" />
   </component>
 </project>

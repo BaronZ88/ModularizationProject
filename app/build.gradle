@@ -5,7 +5,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion '29.0.3'
     defaultConfig {
-        applicationId "com.baronzhang.android.modularization"
+        applicationId "com.modularization.app"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
@@ -45,13 +45,14 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    implementation project(':module-main')
+    implementation project(':biz-module-main')
     implementation project(':biz-module-newhouse')
     implementation project(':biz-module-secondhouse')
     implementation project(':biz-module-renthouse')
 
     implementation project(':lib-common-business')
-    implementation project(':lib-data-center')
+    implementation project(':lib-data-local')
+    implementation project(':lib-data-net')
 
     implementation rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]

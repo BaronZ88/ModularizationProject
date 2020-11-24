@@ -1,5 +1,5 @@
 include ':app',
-        ':module-main',
+        ':biz-module-main',
         ':biz-module-newhouse',
         ':biz-module-secondhouse',
         ':biz-module-renthouse',
@@ -10,5 +10,6 @@ include ':app',
         ':biz-service-renthouse',
 
         ':lib-common-business',
-        ':lib-data-center',
+        ':lib-data-local',
+        ':lib-data-net',
         ':lib-open-source'
