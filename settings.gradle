@@ -9,7 +9,7 @@ include ':app',
         ':biz-service-secondhouse',
         ':biz-service-renthouse',
 
-        ':lib-common-business',
+        ':lib-common',
         ':lib-data-local',
         ':lib-data-net',
         ':lib-open-source'

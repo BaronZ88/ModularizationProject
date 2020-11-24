@@ -8,7 +8,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 
 /**
- * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com) (baron[dot]zhanglei[at]gmail[dot]com ==>> baronzhang.com)
+ * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)
  */
 public final class NetworkUtils {
 

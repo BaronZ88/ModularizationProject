@@ -50,7 +50,7 @@ dependencies {
     implementation project(':biz-module-secondhouse')
     implementation project(':biz-module-renthouse')
 
-    implementation project(':lib-common-business')
+    implementation project(':lib-common')
     implementation project(':lib-data-local')
     implementation project(':lib-data-net')
 

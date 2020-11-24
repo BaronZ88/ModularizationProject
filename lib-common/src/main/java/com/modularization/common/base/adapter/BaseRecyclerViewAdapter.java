@@ -5,7 +5,7 @@ import android.widget.AdapterView;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com) (baron[dot]zhanglei[at]gmail[dot]com ==>> baronzhang.com)
+ * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)
  *         16/4/15
  */
 public abstract class BaseRecyclerViewAdapter<T extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<T>{
