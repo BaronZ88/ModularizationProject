@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.baronzhang.android.renthouse.com.modularization.android.renthouse.MainActivity">
+    tools:context="com.modularization.biz.module.renthouse.MainActivity"
+    tools:ignore="ResourceName">
 
 
     <TextView

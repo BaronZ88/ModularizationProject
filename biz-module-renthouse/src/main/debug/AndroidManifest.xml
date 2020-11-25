@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.baronzhang.android.renthouse">
+    package="com.modularization.biz.module.renthouse">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/RentHouseAppTheme">
         <activity
-            android:name="com.baronzhang.android.renthouse.com.modularization.android.renthouse.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/rent_house_label_home_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

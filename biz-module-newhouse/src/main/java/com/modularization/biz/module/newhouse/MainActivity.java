@@ -6,8 +6,6 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.modularization.android.newhouse.R;
-import com.modularization.android.newhouse.R2;
 import com.modularization.biz.service.renthouse.RentHouseRouterTable;
 import com.modularization.biz.service.newhouse.NewHouseRouterTable;
 import com.modularization.common.base.activity.BaseActivity;

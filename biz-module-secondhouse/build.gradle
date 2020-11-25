@@ -61,5 +61,6 @@ dependencies {
     implementation project(path: ':biz-service-renthouse')
 
     implementation 'com.alibaba:arouter-api:1.5.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
 }

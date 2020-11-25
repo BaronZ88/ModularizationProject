@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.baronzhang.android.newhouse.com.modularization.android.newhouse.MainActivity"
+    tools:context="com.modularization.biz.module.newhouse.MainActivity"
     tools:ignore="MissingDefaultResource">
 
     <TextView

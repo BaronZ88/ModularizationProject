@@ -7,5 +7,7 @@ public interface SecondHouseRouterTable {
 
     String PATH_ACTIVITY_MAIN = "/secondhouse/mainActivity";
 
+    String PATH_FRAGMENT_BLANK = "/secondhouse/blankFragment";
+
     String PATH_SERVICE_SECOND_HOUSE = "/secondhouse/service";
 }

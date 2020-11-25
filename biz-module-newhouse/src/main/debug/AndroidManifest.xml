@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.baronzhang.android.newhouse">
+    package="com.modularization.biz.module.newhouse">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/NewHouseAppTheme">
         <activity
-            android:name="com.baronzhang.android.newhouse.com.modularization.android.newhouse.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/new_house_label_home_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
