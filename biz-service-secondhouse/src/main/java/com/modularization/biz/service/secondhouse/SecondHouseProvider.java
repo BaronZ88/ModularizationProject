@@ -1,5 +1,7 @@
 package com.modularization.biz.service.secondhouse;
 
+import androidx.fragment.app.Fragment;
+
 import com.alibaba.android.arouter.facade.template.IProvider;
 
 /**
@@ -8,4 +10,6 @@ import com.alibaba.android.arouter.facade.template.IProvider;
 public interface SecondHouseProvider extends IProvider {
 
     SecondHouseData fetchSecondHouseData();
+
+    Fragment getFragment(String routePath);
 }

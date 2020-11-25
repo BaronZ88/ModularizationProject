@@ -3,6 +3,8 @@ package com.modularization.biz.module.main;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.modularization.biz.service.base.ResponseCallback;
 import com.modularization.biz.service.newhouse.NewHouseApiData;
@@ -12,6 +14,7 @@ import com.modularization.biz.service.renthouse.RentHouseData;
 import com.modularization.biz.service.renthouse.RentHouseProviderHelper;
 import com.modularization.biz.service.renthouse.RentHouseRouterTable;
 import com.modularization.common.base.activity.BaseActivity;
+import com.modularization.common.base.util.ActivityUtils;
 import com.modularization.common.model.HouseDetail;
 import com.modularization.biz.service.newhouse.NewHouseData;
 import com.modularization.biz.service.secondhouse.SecondHouseData;
@@ -65,6 +68,9 @@ public class MainActivity extends BaseActivity {
 
         RentHouseData rentHouseData = RentHouseProviderHelper.getRentHouseProvider().fetchRentHouseData();
         ((TextView) findViewById(R.id.rent_house_text_view)).setText(rentHouseData.toString());
+
+        Fragment fragment = SecondHouseProviderHelper.getSecondHouseProvider().getFragment(SecondHouseRouterTable.PATH_FRAGMENT_BLANK);
+        ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), fragment, R.id.fragment_container);
     }
 
     @OnClick(R2.id.btn_goto_new_house)

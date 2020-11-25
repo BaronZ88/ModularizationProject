@@ -14,6 +14,6 @@ public class SignInterceptor implements Interceptor {
 
     @Override
     public Response intercept(Chain chain) throws IOException {
-        return null;
+        return chain.proceed(chain.request());
     }
 }
