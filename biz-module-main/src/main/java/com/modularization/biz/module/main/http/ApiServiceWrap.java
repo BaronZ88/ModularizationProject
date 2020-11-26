@@ -1,6 +1,6 @@
-package com.modularization.biz.module.renthouse.http;
+package com.modularization.biz.module.main.http;
 
-import com.modularization.biz.module.renthouse.Constants;
+import com.modularization.biz.module.main.Constants;
 import com.modularization.data.net.service.ServiceWrap;
 
 /**

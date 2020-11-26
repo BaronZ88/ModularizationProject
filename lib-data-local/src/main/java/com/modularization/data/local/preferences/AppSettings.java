@@ -7,8 +7,8 @@ public enum AppSettings {
 
     /*默认配置项*/
     SETTINGS_FIRST_USE("first_use", Boolean.TRUE),
-
-    SETTINGS_CURRENT_CITY_ID("current_city_id", "");
+    SETTINGS_CURRENT_CITY_ID("current_city_id", ""),
+    SETTINGS_CURRENT_CITY_NAME("current_city_name", "");
 
     private final String mId;
     private final Object mDefaultValue;

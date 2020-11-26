@@ -46,11 +46,11 @@ public final class ApiClient {
         this.apiServiceMap = new HashMap<>();
 
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
-//        if (BuildConfig.DEBUG) {
-//            HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-//            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-//            builder.addInterceptor(httpLoggingInterceptor).addNetworkInterceptor(new StethoInterceptor());
-//        }
+        if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            builder.addInterceptor(httpLoggingInterceptor).addNetworkInterceptor(new StethoInterceptor());
+        }
         builder.addNetworkInterceptor(new SignInterceptor());
         this.client = builder.build();
     }
