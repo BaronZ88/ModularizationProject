@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.modularization.data.local.preferences.Preferences;
 import com.modularization.data.net.ApiClient;
 
 /**
@@ -18,5 +19,8 @@ public class ModularizationApp extends Application {
         MultiDex.install(this);
         ARouter.init(this);
         ApiClient.getInstance().init(null);
+
+        //初始化SP配置
+        Preferences.getInstance(this).loadDefaults();
     }
 }

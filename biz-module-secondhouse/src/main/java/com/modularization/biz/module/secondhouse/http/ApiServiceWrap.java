@@ -1,5 +1,6 @@
 package com.modularization.biz.module.secondhouse.http;
 
+import com.modularization.biz.module.secondhouse.Constants;
 import com.modularization.data.net.service.ServiceWrap;
 
 /**
@@ -9,21 +10,21 @@ public class ApiServiceWrap implements ServiceWrap<ApiService> {
 
     @Override
     public String getIdentify() {
-        return null;
+        return Constants.Service.ID;
     }
 
     @Override
     public String getModuleName() {
-        return null;
+        return Constants.Service.MODULE_NAME;
     }
 
     @Override
     public String getHost() {
-        return null;
+        return Constants.Service.HOST;
     }
 
     @Override
     public Class<ApiService> getRealService() {
-        return null;
+        return ApiService.class;
     }
 }

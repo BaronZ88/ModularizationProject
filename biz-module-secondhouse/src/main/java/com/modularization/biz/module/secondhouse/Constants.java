@@ -1,4 +1,4 @@
-package com.modularization.biz.module.newhouse;
+package com.modularization.biz.module.secondhouse;
 
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)
@@ -6,8 +6,8 @@ package com.modularization.biz.module.newhouse;
 public final class Constants {
 
     public static final class Service {
-        public static final String ID = "id_newhouse";
-        public static final String MODULE_NAME = "NewHouseModule";
+        public static final String ID = "id_secondhouse";
+        public static final String MODULE_NAME = "SecondHouseModule";
         public static final String HOST = "https://api.github.com/";
     }
 }
