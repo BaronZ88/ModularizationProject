@@ -7,6 +7,11 @@
     tools:context="com.modularization.biz.module.renthouse.MainActivity"
     tools:ignore="ResourceName">
 
+    <include
+        android:id="@+id/title"
+        layout="@layout/layout_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textView0"
@@ -21,7 +26,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TextView
         android:id="@+id/textView1"
